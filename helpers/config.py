@@ -772,7 +772,7 @@ class Config(metaclass=Singleton):
             if not os.path.isdir(os.path.join(full_repo_path, '.git')):
                 git_command = [
                     'git', 'clone',
-                    f'https://github.com/kobotoolbox/{repo_name}',
+                    f'https://github.com/{repo_name}',
                     full_repo_path
                 ]
 
@@ -1210,13 +1210,13 @@ class Config(metaclass=Singleton):
                 self.__dict['kc_path'] = CLI.colored_input(
                     'KoBoCat files location?', CLI.COLOR_QUESTION,
                     self.__dict['kc_path'])
-                self.__clone_repo(self.__dict['kc_path'], 'kobocat')
+                self.__clone_repo(self.__dict['kc_path'], 'kobotoolbox/kobocat')
 
                 kpi_path = self.__dict['kpi_path']
                 self.__dict['kpi_path'] = CLI.colored_input(
                     'KPI files location?', CLI.COLOR_QUESTION,
                     self.__dict['kpi_path'])
-                self.__clone_repo(self.__dict['kpi_path'], 'kpi')
+                self.__clone_repo(self.__dict['kpi_path'], 'dhaasner/kpi_auc')
 
                 # Create an unique id to build fresh image
                 # when starting containers
@@ -1923,7 +1923,7 @@ class Config(metaclass=Singleton):
                         break
 
                 self.__clone_repo(self.get_letsencrypt_repo_path(),
-                                  'nginx-certbot')
+                                  'kobotoolbox/nginx-certbot')
         else:
             if self.advanced_options:
                 self.__dict['proxy'] = CLI.yes_no_question(
