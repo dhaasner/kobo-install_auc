@@ -31,7 +31,7 @@ class Config(metaclass=Singleton):
     DEFAULT_PROXY_PORT = '8080'
     DEFAULT_NGINX_PORT = '80'
     DEFAULT_NGINX_HTTPS_PORT = '443'
-    KOBO_DOCKER_BRANCH = 'master'
+    KOBO_DOCKER_BRANCH = '2.024.12a'
     KOBO_INSTALL_VERSION = '8.2.0'
     MAXIMUM_AWS_CREDENTIAL_ATTEMPTS = 3
     ALLOWED_PASSWORD_CHARACTERS = (
@@ -1216,7 +1216,7 @@ class Config(metaclass=Singleton):
                 self.__dict['kpi_path'] = CLI.colored_input(
                     'KPI files location?', CLI.COLOR_QUESTION,
                     self.__dict['kpi_path'])
-                self.__clone_repo(self.__dict['kpi_path'], 'dhaasner/kpi_auc')
+                self.__clone_repo(self.__dict['kpi_path'], 'kobotoolbox/kpi')
 
                 # Create an unique id to build fresh image
                 # when starting containers
